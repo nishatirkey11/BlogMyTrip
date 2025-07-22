@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Sign In</title>
+    <style>
+      body {
+        background-color: #f3f4f6;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .signin-card {
+        max-width: 450px;
+        margin: 60px auto;
+        padding: 2rem;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .signin-card h2 {
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: #333;
+      }
+
+      .form-control {
+        border-radius: 10px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        padding: 0.6rem;
+        border-radius: 50px;
+        font-weight: 600;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056d2;
+        border-color: #0056d2;
+      }
+
+      .signup-text {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      .signup-text a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .signup-text a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container">
+      <div class="signin-card">
+        <h2>Welcome Back</h2>
+        <form action="/user/signin" method="post">
+          <div class="mb-3">
+            <label for="signinEmail" class="form-label">Email address</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="signinEmail"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="signinPassword" class="form-label">Password</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="signinPassword"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+
+        <div class="signup-text">
+          Don’t have an account?
+          <a href="/user/signup">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/scripts') %>
+  </body>
+</html>
